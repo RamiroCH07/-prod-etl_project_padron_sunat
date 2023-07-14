@@ -104,11 +104,12 @@ class B_C_WEB_SITE:
         this_continue = True 
         new_page = f'BueCont{number_resource_start}.html'
         df = pd.DataFrame(columns = [str(i) for i in range(5)])
+        print("Iniciando el proceso de CRAWLING......ESPERAR UNOS MINUTOS")
         while this_continue:
             url = self.ENDPOINT+new_page
             try:
                 response = req.get(url,headers = self.headers, timeout = 2)
-                print('Recurso recuperado:',new_page)
+                #print('Recurso recuperado:',new_page)
                 html = response.text
                 soup = bs(html,'html.parser')
             except:

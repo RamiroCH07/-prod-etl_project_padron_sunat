@@ -106,6 +106,7 @@ class DB_SQL_Server:
         camp_names = self._generate_camp_names(columns)
         #Almacenamiento de datos en dicha tabla
         #Obtener la fila 
+        print("ALMACENANDO LOS DATOS......ESPERAR UNOS MINUTOS")
         for num_index,row in enumerate(rows):
             lrow = []
             for i in range(num_columns):
@@ -124,7 +125,7 @@ class DB_SQL_Server:
             try:
                 self.cursor.execute(sql_insert)
                 self.cursor.commit()
-                print("Agregando fila número:",num_index)
+                #print("Agregando fila número:",num_index)
             except Exception as e:
                 print("No se puedo subir el registro",num_index)
                 print("Descripcion problema:",e)

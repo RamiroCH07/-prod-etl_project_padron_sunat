@@ -53,6 +53,7 @@ class A_R_WEB_SITE:
         this_continue = True 
         new_page = f'AgenRet{number_resource_start}.html'
         df = pd.DataFrame(columns = [str(i) for i in range(5)])
+        print("Iniciando el proceso de CRAWILING......ESPERAR UNOS MINUTOS")
         while this_continue:
             url = self.ENDPOINT+new_page
             try:

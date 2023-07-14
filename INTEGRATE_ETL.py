@@ -66,7 +66,7 @@ class INTEGRATE_ETL:
         return df
     # Funcionalidad que genera una tabla aux para copiar todos los datos de Buenos_Contribuyentes
     def _generate_aux_table_in_db(self):
-        self.mod_load.Connect_db()
+        self.obj_database.Connect_db()
         sql_query = '''
         DROP TABLE IF EXISTS AUX_TABLE
         SELECT
@@ -266,6 +266,7 @@ class INTEGRATE_ETL:
         if self._is_there_new_update():
             print('NUEVOS REGISTROS AGREGADOS. EJECUTANDO EL PROCESO ETL')
             self._start_etl_process() 
+            print('PROCESO ETL FINALIZADO CON EXITO')
         else:
             print('NO SE HAN AGREGADO NUEVOS REGISTROS EN EL SITIO WEB')
         
